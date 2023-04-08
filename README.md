@@ -33,7 +33,10 @@ endereco_fk int,
 foreign key(endereco_fk) references endereco(id)
 );
 
-API Documentation:
+Drive com vídeo de explanação de código e arquivos úteis: 
+https://drive.google.com/drive/folders/1FBgTJ25gbCkeh_F_DFJCVACpXXYk_N8f?usp=sharing
+
+API Documentation: 
 https://documenter.getpostman.com/view/26806386/2s93XsXRpW
 
 Clonar este repositório;
