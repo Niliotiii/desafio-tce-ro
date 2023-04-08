@@ -68,12 +68,16 @@ const Form = ({ getPessoas, onEdit, setOnEdit }) => {
 
     if (
       !pessoa.nome.value ||
+      !pessoa.email.value ||
+      !pessoa.telefone.value ||
       !pessoa.cpf.value ||
-      !pessoa.logradouro.value ||
-      !pessoa.numero.value ||
-      !pessoa.bairro.value ||
-      !pessoa.cidade.value ||
-      !pessoa.estado.value ||
+      !pessoa.pai.value ||
+      !pessoa.mae.value ||
+      // !pessoa.logradouro.value ||
+      // !pessoa.numero.value ||
+      // !pessoa.bairro.value ||
+      // !pessoa.cidade.value ||
+      // !pessoa.estado.value ||
       !pessoa.data_nasc.value 
     ) {
       return toast.warn("Preencha todos os campos!");
@@ -93,7 +97,6 @@ const Form = ({ getPessoas, onEdit, setOnEdit }) => {
         bairro: pessoa.bairro.value,
         cidade: pessoa.cidade.value,
         estado: pessoa.estado.value
-
       }).then(({ data }) => {
         toast.success(data);
       }).catch(({ data }) => {
@@ -143,46 +146,57 @@ const Form = ({ getPessoas, onEdit, setOnEdit }) => {
         <Label>Nome*</Label>
         <Input name="nome" />
       </InputArea>
-      <InputArea>
-        <Label>E-mail*</Label>
-        <Input name="email" type="email" />
-      </InputArea>
-      <InputArea>
-        <Label>Telefone*</Label>
-        <Input name="telefone" />
-      </InputArea>
+
       <InputArea>
         <Label>CPF*</Label>
         <Input name="cpf" />
       </InputArea>
-      <InputArea>
-        <Label>Nome do Pai*</Label>
-        <Input name="pai" />
-      </InputArea>
-      <InputArea>
-        <Label>Nome da Mãe*</Label>
-        <Input name="mae" />
-      </InputArea>
+
       <InputArea>
         <Label>Logradouro*</Label>
         <Input name="logradouro" />
       </InputArea>
+
       <InputArea>
         <Label>Número*</Label>
         <Input name="numero" />
       </InputArea>
+
       <InputArea>
         <Label>Bairro*</Label>
         <Input name="bairro" />
       </InputArea>
+
       <InputArea>
         <Label>Cidade*</Label>
         <Input name="cidade" />
       </InputArea>
+
       <InputArea>
         <Label>Estado*</Label>
         <Input name="estado" />
       </InputArea>
+
+      <InputArea>
+        <Label>E-mail*</Label>
+        <Input name="email" type="email" />
+      </InputArea>
+
+      <InputArea>
+        <Label>Telefone*</Label>
+        <Input name="telefone" />
+      </InputArea>
+      
+      <InputArea>
+        <Label>Nome do Pai*</Label>
+        <Input name="pai" />
+      </InputArea>
+
+      <InputArea>
+        <Label>Nome da Mãe*</Label>
+        <Input name="mae" />
+      </InputArea>
+      
       <InputArea>
         <Label>Data de Nascimento*</Label>
         <Input name="data_nasc" type="date" />
