@@ -65,8 +65,6 @@ export class PessoaService {
   }
 
   async remove(id: string) {
-    // const entity = await this.findOne(id);
-    // this.enderecoService.remove(entity.endereco?.id);
     
     return this.repository.remove(await this.findOne(id));
   }

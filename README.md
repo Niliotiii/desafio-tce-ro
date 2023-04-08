@@ -1,6 +1,6 @@
 desafio-tce
 
-Configuração:
+Configuração
 
 Abra o seu mysql com as seguintes configurações:
 user= root
@@ -8,7 +8,8 @@ password= root
 host= localhost
 port= 3306
 
-Desntro do mysql execute o seguinte script:
+Desntro do mysql execute o seguinte script
+
 create database desafio;
 use desafio;
 create table endereco(
@@ -36,6 +37,7 @@ Clonar este repositório;
 
 Abra o teminal e acesse o diretório api
 dentro do diretório api execute o comando npm install
+execute o teste através do comando npm test
 depois execute o comando npm start
 
 Abra um outro terminal e acesse o diretório web
