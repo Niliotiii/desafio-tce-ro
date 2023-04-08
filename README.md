@@ -33,6 +33,9 @@ endereco_fk int,
 foreign key(endereco_fk) references endereco(id)
 );
 
+API Documentation:
+https://documenter.getpostman.com/view/26806386/2s93XsXRpW
+
 Clonar este repositório;
 
 Abra o teminal e acesse o diretório api
