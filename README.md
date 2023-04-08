@@ -41,13 +41,13 @@ https://documenter.getpostman.com/view/26806386/2s93XsXRpW
 
 Clonar este repositório;
 
-Abra o teminal e acesse o diretório api
-dentro do diretório api execute o comando npm install
-depois execute o comando npm start
+Abra o teminal e acesse o diretório api; 
+dentro do diretório api execute o comando npm install; 
+depois execute o comando npm start; 
 
-Abra um outro terminal e acesse o diretório web
-dentro do diretório web execute o comando npm install
-depois execute o comando npm start
+Abra um outro terminal e acesse o diretório web; 
+dentro do diretório web execute o comando npm install; 
+depois execute o comando npm start; 
 
 
 api -> http://localhost:3003
