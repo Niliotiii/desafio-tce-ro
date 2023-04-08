@@ -17,10 +17,16 @@ export class Pessoa {
   mae: string;
 
   @Column({ type: 'date' })
-  dataNasc: Date;
+  data_nasc: Date;
 
   @Column({ unique: true, transformer: new CpfTransformer() })
   cpf: string;
+
+  @Column()
+  email: string;
+
+  @Column()
+  telefone: string;
 
   @ManyToOne( ()=> Endereco, (endereco)=>endereco.pessoas)
   @JoinColumn({name:'endereco_fk', referencedColumnName:'id'})

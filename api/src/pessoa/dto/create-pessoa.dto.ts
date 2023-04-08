@@ -10,14 +10,14 @@ export class CreatePessoaDto {
   @IsString()
   nome: string;
 
-  @IsOptional()
+  @IsNotEmpty()
   @MinLength(3)
   @MaxLength(100)
   @IsString()
   pai: string;
 
-  @IsOptional()
-  @MinLength(4)
+  @IsNotEmpty()
+  @MinLength(3)
   @MaxLength(100)
   @IsString()
   mae: string;
@@ -29,11 +29,23 @@ export class CreatePessoaDto {
   cpf: string;
 
   @IsNotEmpty()
+  @IsDate()
+  data_nasc: Date;
+
+  @IsNotEmpty()
+  @MinLength(3)
+  @MaxLength(100)
+  @IsString()
+  email: string;
+
+  @IsNotEmpty()
+  @MinLength(4)
+  @MaxLength(100)
+  @IsString()
+  telefone: string;
+
+  @IsNotEmpty()
   @ValidateNested()
   @Type(() => EnderecoDto)
   endereco!: EnderecoDto;
-
-  @IsNotEmpty()
-  @IsDate()
-  dataNasc: Date;
 }
