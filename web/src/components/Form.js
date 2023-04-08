@@ -73,16 +73,15 @@ const Form = ({ getPessoas, onEdit, setOnEdit }) => {
       !pessoa.cpf.value ||
       !pessoa.pai.value ||
       !pessoa.mae.value ||
-      // !pessoa.logradouro.value ||
-      // !pessoa.numero.value ||
-      // !pessoa.bairro.value ||
-      // !pessoa.cidade.value ||
-      // !pessoa.estado.value ||
+      !pessoa.logradouro.value ||
+      !pessoa.numero.value ||
+      !pessoa.bairro.value ||
+      !pessoa.cidade.value ||
+      !pessoa.estado.value ||
       !pessoa.data_nasc.value 
     ) {
       return toast.warn("Preencha todos os campos!");
     }
-
     if (onEdit) {
       await axios.patch(`http://localhost:3003/pessoa/${onEdit.id}`, {
         nome: pessoa.nome.value,
@@ -92,11 +91,13 @@ const Form = ({ getPessoas, onEdit, setOnEdit }) => {
         pai: pessoa.pai.value,
         mae: pessoa.mae.value,
         data_nasc: pessoa.data_nasc.value,
-        logradouro: pessoa.logradouro.value,
-        numero: pessoa.numero.value,
-        bairro: pessoa.bairro.value,
-        cidade: pessoa.cidade.value,
-        estado: pessoa.estado.value
+        endereco: {
+          logradouro: pessoa.logradouro.value,
+          numero: pessoa.numero.value,
+          bairro: pessoa.bairro.value,
+          cidade: pessoa.cidade.value,
+          estado: pessoa.estado.value
+        }
       }).then(({ data }) => {
         toast.success(data);
       }).catch(({ data }) => {
@@ -111,18 +112,20 @@ const Form = ({ getPessoas, onEdit, setOnEdit }) => {
         pai: pessoa.pai.value,
         mae: pessoa.mae.value,
         data_nasc: pessoa.data_nasc.value,
-        logradouro: pessoa.logradouro.value,
-        numero: pessoa.numero.value,
-        bairro: pessoa.bairro.value,
-        cidade: pessoa.cidade.value,
-        estado: pessoa.estado.value
+        endereco: {
+          logradouro: pessoa.logradouro.value,
+          numero: pessoa.numero.value,
+          bairro: pessoa.bairro.value,
+          cidade: pessoa.cidade.value,
+          estado: pessoa.estado.value
+        }
       }).then(({ data }) => {
         toast.success(data);
       }).catch(({ data }) => {
         toast.error(data);
       });
     }
-
+    
     pessoa.nome.value = "";
     pessoa.email.value = "";
     pessoa.telefone.value = "";
