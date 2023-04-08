@@ -1,17 +1,20 @@
-desafio-tce
+# Desafio TCE
 
-Configuração
+## Configuração
 
-Abra o seu mysql com as seguintes configurações:
-user= root
-password= root
-host= localhost
-port= 3306
+1. Abra o seu MySQL com as seguintes configurações:
+    - User: root
+    - Password: root
+    - Host: localhost
+    - Port: 3306
 
-Desntro do mysql execute o seguinte script
+2. Dentro do MySQL execute o seguinte script:
 
+```shell
 create database desafio;
+
 use desafio;
+
 create table endereco(
 id int not null primary key auto_increment,
 logradouro varchar(100),
@@ -20,6 +23,7 @@ bairro varchar(100),
 cidade date,
 estado varchar(14)
 );
+  
 create table pessoa(
 id int not null primary key auto_increment,
 cpf varchar(15),
@@ -32,23 +36,34 @@ data_nasc datetime,
 endereco_fk int,
 foreign key(endereco_fk) references endereco(id)
 );
+```
 
-Drive com vídeo de explanação de código e arquivos úteis: 
-https://drive.google.com/drive/folders/1FBgTJ25gbCkeh_F_DFJCVACpXXYk_N8f?usp=sharing
+3. Acesse o drive abaixo para obter os arquivos úteis e um vídeo de explanação do código:
+    - https://drive.google.com/drive/folders/1FBgTJ25gbCkeh_F_DFJCVACpXXYk_N8f?usp=sharing
 
-API Documentation: 
-https://documenter.getpostman.com/view/26806386/2s93XsXRpW
+4. Acesse a documentação da API no link abaixo:
+    - https://documenter.getpostman.com/view/26806386/2s93XsXRpW
 
-Clonar este repositório;
+## Instruções para executar
 
-Abra o teminal e acesse o diretório api; 
-dentro do diretório api execute o comando npm install; 
-depois execute o comando npm start; 
+1. Clone este repositório.
 
-Abra um outro terminal e acesse o diretório web; 
-dentro do diretório web execute o comando npm install; 
-depois execute o comando npm start; 
+2. No diretório `api`, execute os seguintes comandos:
 
+```shell
+npm install
 
-api -> http://localhost:3003
-front -> http://localhost:3000
+npm start
+```
+
+3. Abra um outro terminal e acesse o diretório `web`; dentro do diretório `web`, execute os seguintes comandos:
+
+```shell
+npm install
+
+npm start
+```
+
+4. Acesse a aplicação nos seguintes links:
+- API: http://localhost:3003
+- Front-end: http://localhost:3000
